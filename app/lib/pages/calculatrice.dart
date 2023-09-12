@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class Calculatrice extends StatelessWidget {
@@ -8,7 +7,16 @@ class Calculatrice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text(
+          "Calculatrice",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         child: Card(
           margin: const EdgeInsets.all(10),
@@ -17,9 +25,6 @@ class Calculatrice extends StatelessWidget {
             children: [
               const Row(
                 children: [
-                  SizedBox(
-                    height: 200,
-                  ),
                   SizedBox(
                     width: double.minPositive,
                     height: 70,
@@ -42,6 +47,9 @@ class Calculatrice extends StatelessWidget {
                   createButton("<-", Colors.white, Colors.blue),
                 ],
               ),
+              const SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -50,6 +58,9 @@ class Calculatrice extends StatelessWidget {
                   createButton("9", Colors.white, Colors.blue),
                   createButton("*", Colors.white, Colors.blue),
                 ],
+              ),
+              const SizedBox(
+                height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -60,6 +71,9 @@ class Calculatrice extends StatelessWidget {
                   createButton("-", Colors.white, Colors.blue),
                 ],
               ),
+              const SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -69,6 +83,9 @@ class Calculatrice extends StatelessWidget {
                   createButton("+", Colors.white, Colors.blue),
                 ],
               ),
+              const SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -77,7 +94,10 @@ class Calculatrice extends StatelessWidget {
                   createButton("=", Colors.white, Colors.blue),
                   createButton("/", Colors.white, Colors.blue),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 200,
+              ),
             ],
           ),
         ),
@@ -90,8 +110,19 @@ class Calculatrice extends StatelessWidget {
       onPressed: () {},
       style: ElevatedButton.styleFrom(
         backgroundColor: bgColor,
+        minimumSize: Size(87, 60), // Set the minimum button size
+        padding: const EdgeInsets.symmetric(
+          horizontal: 25,
+          vertical: 15,
+        ),
       ),
-      child: Text(chiffre, style: TextStyle(color: color, fontSize: 25)),
+      child: Text(
+        chiffre,
+        style: TextStyle(
+          color: color,
+          fontSize: 25,
+        ),
+      ),
     );
   }
 }
