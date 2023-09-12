@@ -19,24 +19,30 @@ class Calculatrice extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Card(
-          margin: const EdgeInsets.all(10),
+          margin: const EdgeInsets.fromLTRB(10, 40, 10, 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Row(
+              Row(
                 children: [
                   SizedBox(
-                    width: double.minPositive,
-                    height: 70,
-                  ),
-                  SizedBox(
-                    width: double.minPositive,
-                    height: 70,
+                    width: 391,
+                    height: 150,
+                    child: Container(
+                      alignment: Alignment.centerRight,
+                      color: Colors.black,
+                      child: const Text(
+                        "6",
+                        style: TextStyle(
+                          fontSize: 40,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
               const SizedBox(
-                height: 200,
+                height: 100,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -96,7 +102,7 @@ class Calculatrice extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 200,
+                height: 50,
               ),
             ],
           ),
@@ -110,7 +116,7 @@ class Calculatrice extends StatelessWidget {
       onPressed: () {},
       style: ElevatedButton.styleFrom(
         backgroundColor: bgColor,
-        minimumSize: Size(87, 60), // Set the minimum button size
+        minimumSize: const Size(87, 60), // Set the minimum button size
         padding: const EdgeInsets.symmetric(
           horizontal: 25,
           vertical: 15,
