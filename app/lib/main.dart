@@ -1,4 +1,4 @@
-import 'package:app/calculatrice/calculatrice.dart';
+import 'package:app/pages/calculatrice.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: Calculator(),
+      home: Calculatrice(),
     );
   }
 }
