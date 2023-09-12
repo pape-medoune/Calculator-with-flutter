@@ -27,22 +27,21 @@ class Calculatrice extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: 391,
-                    height: 150,
+                    height: 250,
                     child: Container(
-                      alignment: Alignment.centerRight,
+                      padding: const EdgeInsets.all(10),
+                      alignment: Alignment.bottomRight,
                       color: Colors.black,
                       child: const Text(
                         "6",
-                        style: TextStyle(
-                          fontSize: 40,
-                        ),
+                        style: TextStyle(fontSize: 80, color: Colors.white),
                       ),
                     ),
                   ),
                 ],
               ),
               const SizedBox(
-                height: 100,
+                height: 50,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
