@@ -57,7 +57,7 @@ class _CalculatriceState extends State<Calculatrice> {
                   createButton("AC", Colors.white, Colors.blue),
                   createButton("+/-", Colors.white, Colors.blue),
                   createButton("%", Colors.white, Colors.blue),
-                  createButton("<-", Colors.white, Colors.blue),
+                  createButton("/", Colors.white, Colors.blue),
                 ],
               ),
               const SizedBox(
@@ -100,12 +100,26 @@ class _CalculatriceState extends State<Calculatrice> {
                 height: 20,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  createButton("0", Colors.white, Colors.blue),
-                  createButton(",", Colors.white, Colors.blue),
+                  const SizedBox(
+                    width: 9,
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: createButton("0", Colors.white, Colors.blue),
+                  ),
+                  const SizedBox(
+                    width: 9,
+                  ),
+                  createButton(", ", Colors.white, Colors.blue),
+                  const SizedBox(
+                    width: 9,
+                  ),
                   createButton("=", Colors.white, Colors.blue),
-                  createButton("/", Colors.white, Colors.blue),
+                  const SizedBox(
+                    width: 9,
+                  ),
                 ],
               ),
               const SizedBox(
