@@ -54,10 +54,11 @@ class _CalculatriceState extends State<Calculatrice> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  createButton("AC", Colors.white, Colors.blue),
-                  createButton("+/-", Colors.white, Colors.blue),
-                  createButton("%", Colors.white, Colors.blue),
-                  createButton("/", Colors.white, Colors.blue),
+                  createButton("AC", Colors.white, Colors.grey),
+                  createButton("+/-", Colors.white, Colors.grey),
+                  createButton("%", Colors.white, Colors.grey),
+                  createButton(
+                      "/", Colors.white, Color.fromARGB(144, 255, 153, 0)),
                 ],
               ),
               const SizedBox(
@@ -69,7 +70,8 @@ class _CalculatriceState extends State<Calculatrice> {
                   createButton("7", Colors.white, Colors.blue),
                   createButton("8", Colors.white, Colors.blue),
                   createButton("9", Colors.white, Colors.blue),
-                  createButton("*", Colors.white, Colors.blue),
+                  createButton(
+                      "*", Colors.white, Color.fromARGB(144, 255, 153, 0)),
                 ],
               ),
               const SizedBox(
@@ -81,7 +83,8 @@ class _CalculatriceState extends State<Calculatrice> {
                   createButton("4", Colors.white, Colors.blue),
                   createButton("5", Colors.white, Colors.blue),
                   createButton("6", Colors.white, Colors.blue),
-                  createButton("-", Colors.white, Colors.blue),
+                  createButton(
+                      "-", Colors.white, Color.fromARGB(144, 255, 153, 0)),
                 ],
               ),
               const SizedBox(
@@ -93,7 +96,8 @@ class _CalculatriceState extends State<Calculatrice> {
                   createButton("1", Colors.white, Colors.blue),
                   createButton("2", Colors.white, Colors.blue),
                   createButton("3", Colors.white, Colors.blue),
-                  createButton("+", Colors.white, Colors.blue),
+                  createButton(
+                      "+", Colors.white, Color.fromARGB(144, 255, 153, 0)),
                 ],
               ),
               const SizedBox(
@@ -116,7 +120,7 @@ class _CalculatriceState extends State<Calculatrice> {
                   const SizedBox(
                     width: 9,
                   ),
-                  createButton("=", Colors.white, Colors.blue),
+                  createButton("=", Colors.white, Colors.green),
                   const SizedBox(
                     width: 9,
                   ),
