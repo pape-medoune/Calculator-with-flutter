@@ -1,10 +1,17 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class Calculatrice extends StatelessWidget {
-  const Calculatrice({super.key});
+class Calculatrice extends StatefulWidget {
+  const Calculatrice({Key? key}) : super(key: key);
 
   @override
+  _CalculatriceState createState() => _CalculatriceState();
+}
+
+@override
+class _CalculatriceState extends State<Calculatrice> {
+  String displayText = '';
+  double result = 0.0;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -32,9 +39,10 @@ class Calculatrice extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       alignment: Alignment.bottomRight,
                       color: Colors.black,
-                      child: const Text(
-                        "6",
-                        style: TextStyle(fontSize: 80, color: Colors.white),
+                      child: Text(
+                        displayText,
+                        style:
+                            const TextStyle(fontSize: 80, color: Colors.white),
                       ),
                     ),
                   ),
@@ -110,9 +118,36 @@ class Calculatrice extends StatelessWidget {
     );
   }
 
+  void handleButtonPress(String buttonText) {
+    if (buttonText == '=') {
+      try {
+        final parsedResult = double.parse(displayText);
+        setState(() {
+          result = parsedResult;
+          displayText = result.toString();
+        });
+      } catch (e) {
+        setState(() {
+          displayText = 'Error';
+        });
+      }
+    } else if (buttonText == 'AC') {
+      setState(() {
+        displayText = '';
+        result = 0.0;
+      });
+    } else {
+      setState(() {
+        displayText += buttonText;
+      });
+    }
+  }
+
   ElevatedButton createButton(String chiffre, Color color, Color bgColor) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        handleButtonPress(chiffre);
+      },
       style: ElevatedButton.styleFrom(
         backgroundColor: bgColor,
         minimumSize: const Size(87, 60), // Set the minimum button size
